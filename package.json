@@ -1,6 +1,6 @@
 {
   "name": "extendable",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Extend constructors",
   "main": "index.js",
   "scripts": {
