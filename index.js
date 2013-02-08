@@ -1,8 +1,8 @@
 'use strict'
 
 /**
- * Backbone.js helper functions, these have been copy-pasted from the backbone.js
- * source code so they can re-used in our application interface.
+ * Backbone.js helper functions, this has been copied and modified from the
+ * backbone.js source code so it can be re-used in our application interface.
  *
  * @license MIT, http://backbonejs.org
  */
@@ -17,7 +17,7 @@ module.exports = function(protoProps, staticProps) {
   // The constructor function for the new subclass is either defined by you
   // (the "constructor" property in your `extend` definition), or defaulted
   // by us to simply call the parent's constructor.
-  if (protoProps && _.has(protoProps, 'constructor')) {
+  if (protoProps && has(protoProps, 'constructor')) {
     child = protoProps.constructor;
   } else {
     child = function(){ return parent.apply(this, arguments); };
@@ -43,6 +43,20 @@ module.exports = function(protoProps, staticProps) {
   return child;
 };
 
+/**
+ * Underscore.js helper functions, these have been copied and modified from the
+ * underscore.js source code so they can be re-used in our application interface.
+ *
+ * @license MIT, http://underscorejs.org
+ */
+
+// Shortcut function for checking if an object has a given property directly
+// on itself (in other words, not on a prototype).
+var has = function(obj, key) {
+  return Object.prototype.hasOwnProperty.call(obj, key);
+};
+
+// Extend a given object with all the properties in passed-in object(s).
 var extend = function(obj) {
   Array.prototype.slice.call(arguments, 1).forEach(function(source) {
     if (source) {
